@@ -1,5 +1,3 @@
-
-from os import name
 from mcp.server.fastmcp import FastMCP
 
 # Initialise FastMCP server
