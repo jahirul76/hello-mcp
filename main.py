@@ -1,4 +1,5 @@
 from mcp.server.fastmcp import FastMCP
+import httpx
 
 # Initialise FastMCP server
 mcp = FastMCP("reliefweb")
@@ -6,6 +7,30 @@ mcp = FastMCP("reliefweb")
 @mcp.tool(name="hello", description="A simple hello world tool")
 def hello(name: str) -> str:
     return f"Hello, {name}!"
+
+
+@mcp.tool(name="find_council",
+          description="Finds the council for a given postcode")
+def find_council(postcode: str) -> str:
+    url = f"https://api.postcodes.io/postcodes/{postcode}"
+    response = httpx.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data['result']['admin_district']
+    else:
+        return "Unknown Council"
+
+@mcp.tool(name="get_bin_collection_day", 
+          description="Fetches bin collection day for a given council")
+def get_bin_collection_day(council: str) -> str:
+
+    if council.lower() != "brent":
+        return "This tool only supports Brent council."
+
+    with open('brent_collection_text.txt', 'r') as file:
+        data = file.read().rstrip()
+
+    return data
 
 
 def main():
