@@ -1,6 +1,75 @@
 from mcp.server.fastmcp import FastMCP
 import httpx
 
+brent_collection_text = """Your bin days
+
+Address
+    50 East Lane, Wembley, HA9 7NS
+
+Your collections
+
+Please note all collections can take place between 7am – 10pm.
+Recycling collection
+
+Frequency
+    Every other Thursday 
+Next collection
+    Thursday, 8th January (In progress) 
+
+A missed collection cannot be reported on the day of collection until the crew have finished their round.
+Rubbish collection
+
+Frequency
+    Every other Thursday 
+Next collection
+    Thursday, 15th January 
+Last collection
+    Friday, 2nd January, at 11:08am (this collection was adjusted from its usual time)
+
+    Not Presented
+
+A missed collection cannot be reported; please see the last collection status above.
+Garden waste collection
+Warning
+Your subscription is soon due for renewal.
+Avoid disruption to your service.
+
+Frequency
+    Tuesday every 4 weeks 
+Next collection
+    Tuesday, 13th January 
+Last collection
+    Tuesday, 16th December, at 7:58am 
+
+Please note that missed collections can only be reported within 2 working days of your scheduled collection.
+
+Subscription
+    1 bin
+Renewal
+    31 March 2026, soon due for renewal.
+
+If you are looking to pay for another garden waste service, please contact our Customer Services Team.
+Food waste collection
+
+Frequency
+    Every Thursday 
+Next collection
+    Thursday, 8th January (In progress) 
+
+A missed collection cannot be reported on the day of collection until the crew have finished their round.
+Paper and cardboard (blue sacks) collection
+
+Frequency
+    Every other Thursday 
+Next collection
+    Thursday, 15th January 
+Last collection
+    Friday, 2nd January, at 8:59am (this collection was adjusted from its usual time) 
+
+Please note that missed collections can only be reported within 2 working days of your scheduled collection.
+Small items"""
+
+
 # Initialise FastMCP server
 mcp = FastMCP("reliefweb")
 
@@ -27,10 +96,10 @@ def get_bin_collection_day(council: str) -> str:
     if council.lower() != "brent":
         return "This tool only supports Brent council."
 
-    with open('brent_collection_text.txt', 'r') as file:
-        data = file.read().rstrip()
+    # with open('brent_collection_text.txt', 'r') as file:
+    #     data = file.read().rstrip()
 
-    return data
+    return brent_collection_text
 
 
 def main():
@@ -38,7 +107,6 @@ def main():
 
     # Initialise and run the server
     mcp.run(transport="stdio")
-
 
 if __name__ == "__main__":
     main()
