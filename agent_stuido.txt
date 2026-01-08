@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "hello-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/jahirul76/hello-mcp.git",
+        "run-server"
+      ],
+      "env": {        
+      }
+    }
+  }
+}
