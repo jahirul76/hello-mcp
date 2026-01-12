@@ -71,7 +71,7 @@ Small items"""
 
 
 # Initialise FastMCP server
-mcp = FastMCP("reliefweb")
+mcp = FastMCP("binday-agent")
 
 @mcp.tool(name="hello", description="A simple hello world tool")
 def hello(name: str) -> str:
