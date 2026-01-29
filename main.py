@@ -1,7 +1,8 @@
 from fastmcp import FastMCP
 import httpx
 
-brent_collection_text = """Your bin days
+brent_collection_text = """
+Your bin days
 
 Address
     50 East Lane, Wembley, HA9 7NS
@@ -14,21 +15,20 @@ Recycling collection
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 8th January (In progress) 
+    Thursday, 5th February 
+Last collection
+    Thursday, 22nd January, at 6:49am 
 
-A missed collection cannot be reported on the day of collection until the crew have finished their round.
+Please note that missed collections can only be reported within 2 working days of your scheduled collection.
 Rubbish collection
 
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 15th January 
+    Thursday, 12th February 
 Last collection
-    Friday, 2nd January, at 11:08am (this collection was adjusted from its usual time)
+    Thursday, 29th January, at 9:27am 
 
-    Not Presented
-
-A missed collection cannot be reported; please see the last collection status above.
 Garden waste collection
 Warning
 Your subscription is soon due for renewal.
@@ -37,9 +37,9 @@ Avoid disruption to your service.
 Frequency
     Tuesday every 4 weeks 
 Next collection
-    Tuesday, 13th January 
+    Tuesday, 10th February 
 Last collection
-    Tuesday, 16th December, at 7:58am 
+    Tuesday, 13th January, at 9:13am 
 
 Please note that missed collections can only be reported within 2 working days of your scheduled collection.
 
@@ -54,20 +54,22 @@ Food waste collection
 Frequency
     Every Thursday 
 Next collection
-    Thursday, 8th January (In progress) 
+    Thursday, 5th February 
+Last collection
+    Thursday, 29th January, at 7:10am 
 
-A missed collection cannot be reported on the day of collection until the crew have finished their round.
 Paper and cardboard (blue sacks) collection
 
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 15th January 
+    Thursday, 12th February 
 Last collection
-    Friday, 2nd January, at 8:59am (this collection was adjusted from its usual time) 
+    Thursday, 29th January, at 7:10am 
 
-Please note that missed collections can only be reported within 2 working days of your scheduled collection.
-Small items"""
+Small items
+
+"""
 
 
 # Initialise FastMCP server
