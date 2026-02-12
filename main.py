@@ -2,11 +2,6 @@ from fastmcp import FastMCP
 import httpx
 
 brent_collection_text = """
-Your bin days
-
-Address
-    50 East Lane, Wembley, HA9 7NS
-
 Your collections
 
 Please note all collections can take place between 7am – 10pm.
@@ -15,9 +10,9 @@ Recycling collection
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 5th February 
+    Thursday, 19th February 
 Last collection
-    Thursday, 22nd January, at 6:49am 
+    Thursday, 5th February, at 8:13am 
 
 Please note that missed collections can only be reported within 2 working days of your scheduled collection.
 Rubbish collection
@@ -25,9 +20,9 @@ Rubbish collection
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 12th February 
+    Thursday, 26th February 
 Last collection
-    Thursday, 29th January, at 9:27am 
+    Thursday, 12th February, at 9:32am 
 
 Garden waste collection
 Warning
@@ -37,11 +32,9 @@ Avoid disruption to your service.
 Frequency
     Tuesday every 4 weeks 
 Next collection
-    Tuesday, 10th February 
+    Tuesday, 10th March 
 Last collection
-    Tuesday, 13th January, at 9:13am 
-
-Please note that missed collections can only be reported within 2 working days of your scheduled collection.
+    Tuesday, 10th February, at 7:33am 
 
 Subscription
     1 bin
@@ -54,18 +47,18 @@ Food waste collection
 Frequency
     Every Thursday 
 Next collection
-    Thursday, 5th February 
+    Thursday, 19th February 
 Last collection
-    Thursday, 29th January, at 7:10am 
+    Thursday, 12th February, at 7:04am 
 
 Paper and cardboard (blue sacks) collection
 
 Frequency
     Every other Thursday 
 Next collection
-    Thursday, 12th February 
+    Thursday, 26th February 
 Last collection
-    Thursday, 29th January, at 7:10am 
+    Thursday, 12th February, at 7:04am 
 
 Small items
 
@@ -109,6 +102,7 @@ def main():
 
     # Initialise and run the server
     mcp.run(transport="stdio")
+
 
 if __name__ == "__main__":
     main()
